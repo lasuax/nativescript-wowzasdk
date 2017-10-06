@@ -10,6 +10,7 @@ android {
 
 dependencies {
     // Describe plugin native Android dependencies like
-	//compile "com.wowza.gocoder.sdk:wowzaSdk:1.5" 
+	compile "com.wowza.gocoder.sdk:wowzaSdk:1.5" 
     // EXAMPLE: compile "com.facebook.fresco:fresco:0.9.0+"
+	// compile "com.github.lasuax:nativescript-wowza:master-SNAPSHOT"
 }

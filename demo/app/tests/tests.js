@@ -7,7 +7,7 @@ describe("greet function", function() {
     });
 
     it("returns a string", function() {
-        expect(wowzasdk.getSimpleName()).toEqual("WowzaGoCoder");
+        expect(wowzasdk.getSimpleName()).toEqual("WowzaGoCoder");        
     }); 
 });
 

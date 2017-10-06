@@ -1,6 +1,7 @@
 import { Observable } from 'tns-core-modules/data/observable';
 import * as app from 'tns-core-modules/application';
 import * as dialogs from 'tns-core-modules/ui/dialogs';
+import androidcontentContext = android.content.Context;
 
 declare var com: any;
 
@@ -18,7 +19,7 @@ export class Common extends Observable {
   }
 
   public getSimpleName(): string {
-    let simpleName = com.wowza.gocoder.sdk.api.WowzaGoCoder.class.getSimpleName();
+    let simpleName = com.wowza.gocoder.sdk.api.WZPlatformInfo.getInstance().toString();
     return simpleName;
   }
 }
@@ -32,5 +33,12 @@ export class Utils {
     }, 2000);
 
     return msg;
+  }
+}
+
+export class WowzaGoCoder {
+
+  public Init(context: androidcontentContext, apiLicenseKey: string) {     
+    return com.wowza.gocoder.sdk.api.WowzaGoCoder.class.Init(context, apiLicenseKey);
   }
 }
