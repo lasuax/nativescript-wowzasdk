@@ -2,16 +2,24 @@ import { Observable } from 'tns-core-modules/data/observable';
 import * as app from 'tns-core-modules/application';
 import * as dialogs from 'tns-core-modules/ui/dialogs';
 
+declare var com: any;
+
 export class Common extends Observable {
   public message: string;
 
   constructor() {
     super();
     this.message = Utils.SUCCESS_MSG();
+    console.log(this.getSimpleName());
   }
 
   public greet() {
     return "Hello, NS";
+  }
+
+  public getSimpleName(): string {
+    let simpleName = com.wowza.gocoder.sdk.api.WowzaGoCoder.class.getSimpleName();
+    return simpleName;
   }
 }
 
