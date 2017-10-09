@@ -5,7 +5,7 @@ android {
 		"nativescript-wowzasdk" {
 			dimension "nativescript-wowzasdk"
 		}
-	}
+	}	
 }
 
 dependencies {

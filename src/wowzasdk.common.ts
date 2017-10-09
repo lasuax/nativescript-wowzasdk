@@ -11,17 +11,12 @@ export class Common extends Observable {
   constructor() {
     super();
     this.message = Utils.SUCCESS_MSG();
-    console.log(this.getSimpleName());
   }
 
   public greet() {
     return "Hello, NS";
   }
-
-  public getSimpleName(): string {
-    let simpleName = com.wowza.gocoder.sdk.api.WZPlatformInfo.getInstance().toString();
-    return simpleName;
-  }
+  
 }
 
 export class Utils {
@@ -33,12 +28,5 @@ export class Utils {
     }, 2000);
 
     return msg;
-  }
-}
-
-export class WowzaGoCoder {
-
-  public Init(context: androidcontentContext, apiLicenseKey: string) {     
-    return com.wowza.gocoder.sdk.api.WowzaGoCoder.class.Init(context, apiLicenseKey);
   }
 }

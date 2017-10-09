@@ -1,20 +1,22 @@
 import { Observable } from 'tns-core-modules/data/observable';
-import { Wowzasdk, WowzaGoCoder } from 'nativescript-wowzasdk';
+import { Wowzasdk } from 'nativescript-wowzasdk';
 import * as app from "tns-core-modules/application";
 
+declare var com: any;
+
 export class HelloWorldModel extends Observable {
-  public message: string;
   private wowzasdk: Wowzasdk;
-  private wowzaGoCoder: WowzaGoCoder;
+  private message: string;
 
   constructor() {
     super();
-
-    let context = app.android.context;
-    let sonuc = this.wowzaGoCoder.Init(context, "ET1E4-tT3ex-7NVhU-9vzQQ-J7XCN-3X3Qk-RMcYZEA8h47");
-    console.log(sonuc);
-    this.wowzasdk = new Wowzasdk();
+    this.wowzasdk = new Wowzasdk();    
     this.message = this.wowzasdk.message;
+    // console.log(this.wowzasdk.getSimpleName());
     
+    let context = app.android.context;
+    let sonuc = this.wowzasdk.Init(context, "GOSK-4644-0103-24CB-E7E3-888D");
+    let test = this.wowzasdk.toLabel(2);    
+    console.log(test);    
   }
 }
