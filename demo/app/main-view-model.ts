@@ -15,6 +15,10 @@ export class HelloWorldModel extends Observable {
 
     let context = app.android.context;
     let wzCameraView = this.wowzasdk.WZCameraView(context);
+    // let bConfig = this.wowzasdk.getBroadcastConfig();
+    // console.log(bConfig);
+    // var sonuc = this.wowzasdk.prepareForBroadcast(bConfig);
+    // console.log(sonuc);
 
     let broadCast = this.initBroadcast(context, "http://185.50.69.223", "live", "myStream", "GOSK-4644-0103-24CB-E7E3-888D", "doga", "q1w2e3", 3, wzCameraView);
     console.log(broadCast);
@@ -55,7 +59,7 @@ export class HelloWorldModel extends Observable {
 
   public initBroadcast(context: android.content.Context, hostAddress: string, applicationName: string, broadcastName: string, sdkLicenseKey: string, username: string, password: string, sizePreset: number, cameraView: any) {
     let mGoCoder = this.wowzasdk.Init(context, "GOSK-4644-0103-24CB-E7E3-888D");
-    let broadcastConfig = this.wowzasdk.getBroadcastConfig();
+    let broadcastConfig = this.wowzasdk.WZBroadcastConfig();// getBroadcastConfig();
 
     // Update the active config to the defaults for 720p video
 
